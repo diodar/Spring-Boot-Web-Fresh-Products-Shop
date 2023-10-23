@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="orders" class="container justify-content-center mt-3 mb-3">
+    <div class="container-sm">
+        <h3>Orders</h3>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+            <div class="card" th:each="order:${orders}">
+                <div class="btn-group btn-group-sm mb-1" role="group">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                </div>
+                <div class="card-body">
+                    <p>
+                        <span id="idee" class="card-text visually-hidden" th:text="${order.id}"></span><br>
+                        <span class="fw-bolder">Order code: </span>
+                        <span id="ordCode" class="card-text" th:text="${order.orderCode}"></span><br>
+                        <span class="fw-bolder">Buyer: </span>
+                        <span id="usrName" class="card-text me-2" th:text="${order.userName}"></span>
+                        <span id="usrPhone" class="card-text me-2" th:text="${order.userPhone}"></span>
+                        <span id="usrEmail" class="card-text me-2" th:text="${order.userEmail}"></span><br>
+                        <span class="fw-bolder">Order content: </span>
+                        <span id="ordContent" class="card-text" th:text="${order.content}"></span><br>
+                        <span class="fw-bolder">Order status: </span>
+                        <span id="ordStatus" class="card-text" th:text="${order.status}"></span><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

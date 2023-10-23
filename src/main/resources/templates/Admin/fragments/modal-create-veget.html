@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Modal Create Veget-->
+<div th:fragment="modal-create-veget" class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-primary" id="addModalLabel">Add new item</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="modalFormCreateVeget" method='post' th:action="@{/admin/create-veget}" enctype="multipart/form-data">
+                    <div class="mb-2">
+                        <label for="nameInputAdd" class="form-label" style="font-size: 12px;">Name</label>
+                        <input type="text" class="form-control" id="nameInputAdd" placeholder="Name...">
+                    </div>
+                    <div class="mb-2">
+                        <label for="artInputAdd" class="form-label" style="font-size: 12px;">Article</label>
+                        <input type="text" class="form-control" id="artInputAdd" placeholder="Article...">
+                    </div>
+                    <div class="mb-2">
+                        <label for="descrTextareaAdd" class="form-label" style="font-size: 12px;">Description</label>
+                        <textarea class="form-control" id="descrTextareaAdd" rows="2"></textarea>
+                    </div>
+                    <div class="mb-2">
+                        <label for="priceInputAdd" class="form-label" style="font-size: 12px;">Price</label>
+                        <input type="text" class="form-control" id="priceInputAdd" placeholder="Price...">
+                    </div>
+                    <div class="mb-2">
+                        <input class="form-control" type="file" id="formFileAdd">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div id="addModalSpinner" class="spinner-border text-warning visually-hidden" role="status">
+                </div>
+                <button id="addModalBtnClear" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Clear form</button>
+                <button id="addModalBtnSave" type="button" class="btn btn-primary">Save</button>
+            </div>
+            <div id='addModalResponse' class="m-2 p-2"></div>
+        </div>
+    </div>
+</div>
+<!-- End Modal Create Veget-->
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Modal Order-->
+<div th:fragment="modal-order" class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-primary" id="orderModalLabel">My Order</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="orderModalForm" method='post' th:action="@{/order}">
+                    <div class="mb-2">
+                        <label for="nameInputOrder" class="form-label" style="font-size: 12px;">Name</label>
+                        <input type="text" class="form-control" id="nameInputOrder" placeholder="Name...">
+                    </div>
+                    <div class="mb-2">
+                        <label for="phoneInputOrder" class="form-label" style="font-size: 12px;">Phone</label>
+                        <input type="tel" class="form-control" id="phoneInputOrder" placeholder="Phone...">
+                    </div>
+                    <div class="mb-2">
+                        <label for="emailInputOrder" class="form-label" style="font-size: 12px;">Email</label>
+                        <input type="email" class="form-control" id="emailInputOrder" placeholder="Email...">
+                    </div>
+                    <div class="mb-2">
+                        <label for="orderMsgTextareaOrder" class="form-label" style="font-size: 12px;">Order message
+                            (indicate product name and article)</label>
+                        <textarea class="form-control" id="orderMsgTextareaOrder" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div id="orderModalSpinner" class="spinner-border text-warning visually-hidden" role="status">
+                </div>
+                <button id="orderModalBtnClear" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Clear form</button>
+                <button id="orderModalBtnSend" type="button" class="btn btn-primary">Send</button>
+            </div>
+            <div id='orderModalResponse' class="m-3 p-2"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav id="menu" th:fragment="menu" class="navbar navbar-expand-lg bg-primary">
+    <div  class="container-fluid">
+        <i class="bi bi-shop" style="font-size: 30px; color: white;"></i>
+        <span class="navbar-brand ms-1 mb-0 h1 text-white">FRESH PRODUCTS SHOP</span>
+        <!-- Menu toggle button for small-screen  -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{./}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{./vegets}">Vegetables</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{./fruits}">Fruits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" th:href="@{./contacts}">Contacts</a>
+                </li>
+                <li>
+                    <!-- Trigger button for Order Modal -->
+                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#orderModal">
+                        Make order
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

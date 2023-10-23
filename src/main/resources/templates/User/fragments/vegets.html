@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- WARNING: URI is not registered (Settings | Languages & Frameworks | Schemas and DTDs)
+See: https://stackoverflow.com/questions/38730992/thymleaf-for-spring-in-intellij-uri-is-not-registered -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="vegets" class="container justify-content-center mt-3 mb-3">
+    <div class="container-sm">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5">
+            <div class="card" th:each="veget:${vegets}">
+                <img id="imgee" th:src="@{${veget.img}}" class="card-img-top p-1 m-1" alt="veget-img">
+                <div class="card-body">
+                    <p>
+                        <span id="idee" class="card-text visually-hidden" th:text="${veget.id}"></span><br>
+                        <span id="namee" class="card-text fw-bold" th:text="${veget.name}"></span><br>
+                        <span class="fw-lighter" style="font-size: 12px;">art. </span>
+                        <span id="articlee" class="fw-lighter" style="font-size: 12px;" th:text="${veget.article}"></span><br>
+                        <span id="descript" class="card-text" th:text="${veget.descr}"></span><br>
+                        <span>&#8364; </span> <!-- <- HTML EUR--->
+                        <span id="pricee" class="card-text" th:text="${veget.price}"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

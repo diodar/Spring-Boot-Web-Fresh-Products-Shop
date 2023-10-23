@@ -1,0 +1,7 @@
+/*
+How an I change the Bootstrap 5 navbar button border and icon color?
+https://stackoverflow.com/questions/68069042/how-an-i-change-the-bootstrap-5-navbar-button-border-and-icon-color
+*/
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0;
+}
